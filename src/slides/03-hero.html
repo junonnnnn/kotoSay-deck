@@ -1,0 +1,41 @@
+<!-- 03 · Hero — introducing kotoSay -->
+<section class="slide hero" data-label="kotoSay">
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="hero__text">
+    <span class="eyebrow" data-reveal>Introducing</span>
+    <h2 class="wordmark hero__mark" data-reveal style="--i:1">koto<span>Say</span></h2>
+    <p class="hero__jp" lang="ja" data-reveal style="--i:2">ポケットに入る双方向AI手話通訳</p>
+    <p class="hero__tagline" data-reveal style="--i:3">
+      A <strong>two-way sign language interpreter</strong> in your pocket.
+    </p>
+    <p class="lede hero__lede" data-reveal style="--i:4">
+      Deaf people sign to a phone. kotoSay turns <strong>sign and emotion into voice</strong>,
+      and a <strong>3D avatar signs the reply</strong> back.
+    </p>
+    <ul class="chips" data-reveal style="--i:5">
+      <li class="chip"><strong>Japanese</strong> Sign Language · JSL</li>
+      <li class="chip"><strong>Malaysian</strong> Sign Language · MSL</li>
+      <li class="chip">Production-ready <strong>Android app</strong></li>
+    </ul>
+  </div>
+
+  <div class="hero__visual" data-reveal style="--i:3">
+    <div class="phone">
+      <div class="phone__screen">
+        <!-- Real recording: JSL in, "I have a stomach ache right now" out (voice at ~17s) -->
+        <video class="phone__video" data-autoplay playsinline preload="auto"
+               src="assets/video/kotosay-demo.mp4"
+               poster="assets/video/kotosay-demo-poster.jpg"
+               aria-label="kotoSay demo: a signer uses Japanese Sign Language and the app says “I have a stomach ache right now.”"></video>
+        <button class="phone__play" type="button" aria-label="Play demo">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg>
+        </button>
+      </div>
+      <button class="sound" type="button" aria-label="Sound" aria-pressed="true">
+        <svg class="sound__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11" /></svg>
+        <svg class="sound__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="m16 9.5 5 5M21 9.5l-5 5" /></svg>
+      </button>
+    </div>
+  </div>
+</section>
