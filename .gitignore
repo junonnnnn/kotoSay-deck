@@ -1,0 +1,12 @@
+# Local scratch copies of the built deck
+Claude outputs/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
