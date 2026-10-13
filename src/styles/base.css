@@ -52,6 +52,7 @@ strong { font-weight: 600; color: var(--ink-1); }
   color: var(--ink-1); text-wrap: balance;
 }
 .title strong { font-weight: 700; color: var(--ink-1); }
+.title--keywords { color: var(--ink-2); }  /* gray sentence, white <strong> keywords */
 .headline {                   /* 32px */
   font-family: var(--font-display);
   font-size: 2cqw; line-height: 1.22; letter-spacing: -0.014em; font-weight: 600;
