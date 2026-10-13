@@ -7,6 +7,10 @@ Pitch deck for the **Tokyo Global Innovation Challenge 2026**. Built from
 Firefox). It's one self-contained file with no internet connection needed, so you can
 email it, put it on a USB stick or upload it anywhere.
 
+**Or open it online:** https://junonnnnn.github.io/kotoSay-deck/ (GitHub Pages).
+The site updates a minute or two after `main` is pushed. It serves the committed
+`index.html`, so run `python build.py` and commit the result for changes to show up.
+
 ## Presenting
 
 | Action | How |
