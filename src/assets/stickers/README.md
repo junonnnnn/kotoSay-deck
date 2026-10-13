@@ -4,7 +4,7 @@ Generated with the built-in ImageGen tool for the `chee` branch. Inspired by the
 
 - `open-hand.png`: hand sculpture on slide 1, with an editable SVG landmark overlay.
 - `everyday-access.png`: illustration on slide 5.
-- `conversation.png`: illustration on slide 13.
+- `conversation.png`: illustration (currently unused).
 
 These are decorative illustrations, not photographs of testing or screenshots of the product. The opening uses the clay hand with 21 editable SVG points mapped to the artwork, as requested. The overlay is illustrative, not a measured MediaPipe inference result.
 
