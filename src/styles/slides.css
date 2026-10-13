@@ -37,22 +37,25 @@
 }
 
 /* Hand landmarks — 21 points, as a pose model sees a hand */
-.hand__bones polyline { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.hand--dim .hand__bones polyline { stroke: rgba(255, 255, 255, 0.16); }
-.hand--dim .hand__joints circle { fill: rgba(255, 255, 255, 0.34); }
+.hand__bones polyline { fill: none; stroke: #225b56; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.hand__joints circle { fill: var(--sign); stroke: #fff5e8; stroke-width: 4; }
 
 /* ---------- 01 · Social issue ---------- */
 .issue { flex-direction: row; align-items: center; justify-content: space-between; gap: 4cqw; }
-.issue__text { max-width: 60cqw; }
+.issue__text { max-width: 55cqw; }
 .issue__sub {
   margin-top: 2.5cqw;
   font-family: var(--font-display);
-  font-size: 2.5cqw; line-height: 1.2; letter-spacing: -0.018em; font-weight: 600;
+  font-size: 1.8cqw; line-height: 1.4; letter-spacing: -0.01em; font-weight: 400;
   color: var(--ink-2); text-wrap: balance;
 }
 .issue__sub i { font-style: italic; }
 .issue__sub [lang="ja"] { font-weight: 500; }
-.issue__hand { flex: none; width: 21cqw; height: auto; margin-right: 1cqw; transform-origin: 50% 90%; }
+.issue__hand { flex: none; width: 31cqw; margin-right: 0; transform-origin: 50% 90%; }
+.issue__hand-art { position: relative; width: 100%; aspect-ratio: 1; }
+.issue__hand-art img, .issue__hand-art svg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.issue__hand figcaption { margin-top: 0.6cqw; text-align: center; color: var(--ink-2); }
+.issue__hand figcaption span { display: block; color: var(--ink-3); font-size: 0.85em; margin-top: 0.25cqw; }
 .issue__hand[data-reveal] { transform: rotate(-4deg) translate3d(0, 1.1cqw, 0); }
 .slide.is-visible .issue__hand[data-reveal] { transform: rotate(-4deg); }
 
@@ -63,18 +66,17 @@
 }
 .story { position: relative; display: flex; flex-direction: column; padding: 0; overflow: hidden; }
 
-/* Faded picture: full-bleed, see-through, fading into the card (slides 2 and 12) */
+/* Keep photographs bright; fade only where they meet the text. */
 .story__media, .member__media {
   position: relative; flex: 1 1 0; min-height: 8cqw; margin: 0;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.85) 45%, transparent 100%);
-          mask-image: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.85) 45%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 75%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 0%, #000 75%, transparent 100%);
 }
 .story__media img, .member__media img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover; object-position: 50% 0%;
-  opacity: 0.5;
-  filter: saturate(0.85);
+  opacity: 1;
 }
 
 .story__body { position: relative; padding: 0.4cqw 2.25cqw 2cqw; }
@@ -84,12 +86,13 @@
   color: var(--ink-3);
 }
 .story__tag--accent { color: var(--sign); }
+.story__headline { font-size: 2cqw; line-height: 1.15; margin-bottom: 0.8cqw; letter-spacing: -0.02em; }
 .story__text {
-  font-size: 1.7cqw; line-height: 1.32; letter-spacing: -0.01em;
+  font-size: 1.5cqw; line-height: 1.4; letter-spacing: -0.005em;
   color: var(--ink-2); text-wrap: pretty;
 }
 .story--feature { background: var(--surface-2); }
-.story--feature .story__text { font-size: 1.75cqw; }
+.story--feature .story__text { font-size: 1.5cqw; }
 .story__source {
   margin-top: 1.4cqw; padding-top: 0.9cqw;
   border-top: 1px solid var(--hairline);
@@ -107,13 +110,13 @@
   pointer-events: none;
 }
 .hero__text { position: relative; flex: 1 1 0; min-width: 0; }
-.hero__mark { font-size: 8.75cqw; line-height: 0.95; margin: 0 0 1.1cqw -0.35cqw; }
+.hero__mark { font-size: 7.25cqw; line-height: 0.95; margin: 0 0 1.1cqw -0.35cqw; }
 .hero__jp { font-size: 1.8cqw; line-height: 1.5; font-weight: 500; color: var(--ink-2); margin-bottom: 2cqw; }
 .hero__tagline {
   max-width: 46cqw;
   font-family: var(--font-display);
   font-size: 3cqw; line-height: 1.12; letter-spacing: -0.024em; font-weight: 700;
-  color: var(--ink-2); text-wrap: balance;
+  color: var(--ink-1); text-wrap: balance;
 }
 .hero__tagline strong { font-weight: 700; }
 .hero__lede { max-width: 46cqw; margin-top: 1.4cqw; }
@@ -123,6 +126,8 @@
   position: relative; flex: 0 0 34cqw; height: 100%;
   display: grid; place-items: center;
 }
+.hero__example { margin-top: 1.5cqw; padding-left: 1.2cqw; border-left: 3px solid var(--sign); }
+.hero__example p { font-size: 1.6cqw; margin-top: 0.35cqw; color: var(--ink-1); }
 .phone {
   position: relative;
   width: 19.5cqw;
@@ -217,16 +222,14 @@
 .flow__legend > span { display: inline-flex; align-items: center; gap: 0.6cqw; }
 
 /* ---------- 05 · Impact ---------- */
-.places {
-  flex: 1; min-height: 0; max-height: 23cqw;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5cqw;
-}
-.place { display: flex; flex-direction: column; gap: 0.8cqw; }
-.place__icon { width: 3.25cqw; height: 3.25cqw; color: var(--sign); margin-bottom: auto; }
+.impact-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 4cqw; align-items: center; flex: 1; min-height: 0; }
+.impact-art { width: 100%; height: 28cqw; object-fit: contain; }
+.places { display: flex; flex-direction: column; gap: 1.5cqw; }
+.place { display: flex; flex-direction: column; gap: 0.4cqw; padding: 0 0 1.5cqw; border: 0; border-bottom: 1px solid var(--hairline-strong); border-radius: 0; background: none; }
+.place:last-child { border-bottom: 0; }
 .place .headline { color: var(--ink-1); font-size: 2.1cqw; }
-.place .body { font-size: 1.45cqw; }
-.impact-foot { margin-top: auto; max-width: 72cqw; }
-.impact-foot .caption { margin-top: 0.7cqw; }
+.place .body { font-size: 1.55cqw; }
+.impact-foot { margin-top: 1.5cqw; max-width: 82cqw; }
 
 /* ---------- 06 · Validation ---------- */
 .steps {
@@ -248,11 +251,13 @@
   font-size: 1.3cqw; font-weight: 700; color: var(--ink-1);
 }
 .step__kicker {
-  display: block; margin: 1.4cqw 0 0.6cqw;
+  display: block; margin: 1.2cqw 0 0.6cqw;
   font-family: var(--font-display);
-  font-size: 2.5cqw; line-height: 1.15; letter-spacing: -0.02em; font-weight: 700;
+  font-size: 1.35cqw; line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; color: var(--ink-2);
 }
 .step .body { font-size: 1.65cqw; line-height: 1.4; }
+.step__value { font-size: 4.75cqw; line-height: 1; font-weight: 700; letter-spacing: -0.04em; margin: 1.2cqw 0 0.7cqw; color: var(--ink-1); }
+.step__value span { font-size: 0.4em; letter-spacing: 0; color: var(--reply); }
 .callout {
   margin-top: auto;
   display: flex; align-items: baseline; gap: 2.25cqw;
@@ -277,7 +282,8 @@
 }
 .stat__value span { margin-left: 0.06em; font-size: 0.5em; letter-spacing: -0.02em; font-weight: 600; color: var(--ink-2); }
 .stat .body { font-size: 1.5cqw; max-width: 19cqw; }
-.awards { margin-top: 4.5cqw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5cqw; }
+.awards { margin-top: 2cqw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5cqw; }
+.awards-label { margin-top: 3cqw; color: var(--ink-3); }
 .award {
   display: flex; align-items: center; gap: 1.25cqw;
   padding: 1.5cqw 1.8cqw;
@@ -288,44 +294,11 @@
 .award__icon { flex: none; width: 2.75cqw; height: 2.75cqw; color: var(--sign); }
 .award .body { font-size: 1.35cqw; line-height: 1.3; }
 
-/* ---------- 08 · Market ---------- */
-.sizing {
-  display: flex; align-items: flex-end; gap: 1.75cqw;
-  padding-bottom: 2.4cqw;
-  border-bottom: 1px solid var(--hairline);
-}
-.sizing__value {
-  margin-bottom: 0.7cqw;
-  font-family: var(--font-display);
-  font-size: 5.5cqw; line-height: 1; letter-spacing: -0.045em; font-weight: 700;
-  font-variant-numeric: tabular-nums; color: var(--ink-1);
-}
-.sizing__value span { margin-left: 0.04em; font-size: 0.6em; letter-spacing: -0.02em; }
-.sizing__term .body { font-size: 1.35cqw; }
-.sizing__op {
-  align-self: flex-start;
-  padding-top: 1.2cqw;
-  font-size: 3.5cqw; line-height: 1; font-weight: 300; color: var(--ink-3);
-}
-.sizing__term--total { margin-left: 0.5cqw; }
-.sizing__term--total .sizing__value { font-size: 6.75cqw; color: var(--sign); }
-.needs { margin-top: 4cqw; }
-.needs__intro { margin-bottom: 1.4cqw; }
-.needs__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5cqw; }
-.need {
-  display: flex; align-items: center; gap: 1.2cqw;
-  padding: 1.6cqw 1.8cqw;
-  background: var(--surface-1);
-  border: 1px solid var(--hairline);
-  border-radius: var(--r-lg);
-}
-.need .headline { color: var(--ink-2); font-size: 1.9cqw; }
-.need__num, .matrix__n, .reason__num {
+.matrix__n, .reason__num {
   flex: none; display: inline-grid; place-items: center;
   border-radius: 50%; background: var(--surface-3);
   font-weight: 700; color: var(--ink-1); font-variant-numeric: tabular-nums;
 }
-.need__num { width: 2.6cqw; height: 2.6cqw; font-size: 1.2cqw; }
 
 /* ---------- 09 · Competition matrix ---------- */
 .matrix-wrap { flex: 1; min-height: 0; }
@@ -334,7 +307,7 @@
 .matrix thead th {
   padding: 0 1.4cqw 1.1cqw;
   text-align: left; vertical-align: bottom;
-  font-size: 1.25cqw; line-height: 1.3; font-weight: 600; color: var(--ink-1);
+  font-size: 1.4cqw; line-height: 1.3; font-weight: 600; color: var(--ink-1);
   border-bottom: 1px solid var(--hairline-strong);
 }
 .matrix .matrix__corner { color: var(--ink-3); font-weight: 500; }
@@ -348,7 +321,7 @@
   position: relative;
   padding: 1.3cqw 1.4cqw 1.3cqw 4.1cqw;
   vertical-align: middle;
-  font-size: 1.3cqw; line-height: 1.3; color: var(--ink-2);
+  font-size: 1.4cqw; line-height: 1.3; color: var(--ink-2);
 }
 .matrix tbody tr + tr > * { border-top: 1px solid var(--hairline); }
 .matrix .matrix__us > * { border-top: 0; background: var(--surface-2); color: var(--ink-1); }
@@ -393,10 +366,10 @@
 .price__value span { margin-left: 0.3em; font-size: 0.27em; letter-spacing: -0.01em; font-weight: 600; color: var(--ink-2); }
 .price .lede { margin-top: 0.6cqw; }
 .unit { margin: 3.5cqw 0 0; }
-.unit__bar { display: flex; gap: 2px; height: 2.4cqw; }
-.unit__seg { flex: var(--w) 1 0; border-radius: 0.25cqw; }
+.unit__bar { display: flex; gap: 2px; height: 3.5cqw; }
+.unit__seg { flex: var(--w) 1 0; border-radius: 0.25cqw; display: grid; place-items: center; color: var(--ink-1); font-size: 1.3cqw; font-weight: 600; }
 .unit__seg--cost { background: var(--neutral-fill); }
-.unit__seg--margin { background: var(--sign); }
+.unit__seg--margin { background: var(--sign); color: #000; }
 .unit__labels { display: flex; gap: 2px; margin-top: 0.9cqw; }
 .unit__labels > span { flex: var(--w) 1 0; padding-right: 1cqw; font-size: 1.15cqw; line-height: 1.35; color: var(--ink-2); }
 .reasons { display: flex; flex-direction: column; gap: 1.2cqw; }
@@ -435,14 +408,10 @@
   box-shadow: 0 0 0 0.4cqw var(--bg), 0 0 0 0.6cqw var(--sign-soft);
 }
 .phase__date { position: relative; z-index: 1; padding: 0 1cqw 0 0.9cqw; background: var(--bg); }
-.phase__card { flex: 1; }
+.phase__card { flex: 1; background: none; border: 0; border-radius: 0; border-top: 1px solid var(--hairline-strong); padding: 1.7cqw 0; }
+.phase__milestone { font-size: 4cqw; line-height: 1; letter-spacing: -0.035em; color: var(--sign); font-weight: 700; margin-bottom: 1.5cqw; }
+.phase__support { font-size: 1.35cqw; color: var(--ink-3); margin-top: 1.2cqw; }
 .phase .headline { margin-bottom: 0.5cqw; color: var(--ink-1); }
-.phase__list li { position: relative; margin-top: 0.8cqw; padding-left: 1.35cqw; font-size: 1.4cqw; }
-.phase__list li::before {
-  content: ""; position: absolute; left: 0; top: 0.62em;
-  width: 0.45cqw; height: 0.45cqw; border-radius: 50%; background: var(--ink-3);
-}
-
 /* ---------- 12 · Team ---------- */
 .team {
   flex: 1; min-height: 0; margin-top: 0.5cqw;
@@ -456,27 +425,40 @@
   border: 1px solid var(--hairline);
   border-radius: var(--r-lg);
 }
-.member__media { flex: none; height: 19cqw; }   /* same height in every card, so names line up */
-.member__media img { object-position: 50% 15%; }
+.member__media { flex: none; height: 19cqw; }
+.member__media img { object-position: 50% 30%; }
+.member:nth-child(1) img { object-position: 50% 25%; }
+.member:nth-child(2) img { object-position: 50% 22%; }
+.member:nth-child(4) img { object-position: 50% 34%; }
+.member:nth-child(5) img { object-position: 50% 46%; }
 .member__body { position: relative; padding: 0.4cqw 1.9cqw 2.25cqw; }
 .member .headline { color: var(--ink-1); }
-.member__role { margin: 0.3cqw 0 0.9cqw; font-size: 1.1cqw; line-height: 1.3; font-weight: 600; letter-spacing: 0.006em; color: var(--sign); }
+.member__role { margin: 0.3cqw 0 0.9cqw; min-height: 3cqw; font-size: 1.2cqw; line-height: 1.3; font-weight: 600; letter-spacing: 0.006em; color: var(--sign); }
 .member .body { font-size: 1.35cqw; }
 
 /* ---------- 13 · Close ---------- */
-.close { align-items: center; justify-content: center; text-align: center; }
-.close__glow {
-  right: auto; left: 50%; top: 46%;
-  width: 72cqw; height: 46cqw;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(closest-side, rgba(242, 92, 59, 0.13), rgba(242, 92, 59, 0) 100%);
-}
-.close__body { position: relative; display: flex; flex-direction: column; align-items: center; max-width: 74cqw; }
+.close { flex-direction: row; align-items: center; justify-content: space-between; gap: 3cqw; text-align: left; }
+.close__body { position: relative; display: flex; flex-direction: column; align-items: flex-start; max-width: 57cqw; }
 .close__mark { font-size: 5cqw; line-height: 1; margin-bottom: 2.25cqw; }
-.close__statement { font-size: 4cqw; }
+.close__statement { font-size: 3.65cqw; }
 .close__jp { margin-top: 1.6cqw; font-size: 1.65cqw; line-height: 1.5; color: var(--ink-2); }
-.ask { margin-top: 3.5cqw; }
+.ask { margin-top: 2.5cqw; }
 .ask__label { display: block; margin-bottom: 1cqw; font-size: 1.15cqw; font-weight: 600; letter-spacing: 0.01em; color: var(--ink-3); }
 .close__foot { position: absolute; bottom: 2.6cqw; }
 .close__foot--left { left: 6.25cqw; }
 .close__foot--right { right: 6.25cqw; }
+.close__art { width: 27cqw; height: 30cqw; object-fit: contain; }
+.ask__primary { font-size: 2.1cqw; color: var(--ink-1); margin-bottom: 0.5cqw; }
+.ask__secondary { font-size: 1.3cqw; color: var(--ink-2); margin-top: 0.8cqw; max-width: 47cqw; }
+.project-link { color: var(--ink-1); text-decoration-color: var(--sign); text-underline-offset: 0.3em; }
+
+/* ---------- 08 · Market: result and assumptions ---------- */
+.market-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4cqw; align-items: center; flex: 1; min-height: 0; }
+.market-total { font-size: 10cqw; font-weight: 700; letter-spacing: -0.05em; line-height: 1; color: var(--sign); }
+.market-total span { font-size: 0.45em; }
+.market-summary .lede { margin-top: 1cqw; }
+.market-assumptions { border-left: 1px solid var(--hairline-strong); padding-left: 3cqw; }
+.market-assumptions li { display: flex; flex-direction: column; gap: 0.3cqw; margin-bottom: 1.8cqw; }
+.market-assumptions strong { font-size: 2.4cqw; }
+.market-assumptions span { font-size: 1.4cqw; color: var(--ink-2); }
+.market-note { margin-top: 2cqw; max-width: 83cqw; }

@@ -184,6 +184,8 @@
   }
 
   /* ---------- Pointer: drag / swipe ---------- */
+  // Keep native image dragging from cancelling the slide gesture.
+  stage.addEventListener("dragstart", (e) => e.preventDefault());
   let drag = null;
   let swallowClick = false;
   window.addEventListener("click", (e) => {

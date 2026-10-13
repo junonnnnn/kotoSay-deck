@@ -1,34 +1,49 @@
-<!-- 01 · The social issue — open on the problem, not the product -->
+<!-- 01 · The social issue -->
 <section class="slide issue" data-label="The issue">
   <div class="issue__text">
     <span class="eyebrow" data-reveal>The social issue</span>
-    <h1 class="statement" data-reveal style="--i:1">
-      Sign language is a Deaf person’s <strong>first and only native language.</strong>
-    </h1>
-    <p class="issue__sub" data-reveal style="--i:3">
-      Yet it has long been <strong>denied</strong> — even mocked as
-      <strong><i>te-mane</i></strong> <span lang="ja">手真似</span>, “monkey imitation.”
-    </p>
+    <h1 class="statement" data-reveal style="--i:1">Access starts with<br />a shared language</h1>
+    <p class="issue__sub" data-reveal style="--i:2">For many Deaf people, sign language is their first language. Yet it has long been denied and dismissed.</p>
+    <p class="caption" data-reveal style="--i:3">Historically mocked as <i>te-mane</i> <span lang="ja">手真似</span>, “monkey imitation.”</p>
   </div>
-
-  <!-- Decorative: a hand as a machine sees it — 21 landmarks, unlit -->
-  <svg class="hand hand--dim issue__hand" viewBox="0 0 200 240" aria-hidden="true" data-reveal style="--i:4">
-    <g class="hand__bones">
-      <polyline points="100,222 70,201 48,176 34,151 24,129" />
-      <polyline points="100,222 72,131 64,96 60,71 57,49" />
-      <polyline points="72,131 98,126 122,131 143,143 100,222" />
-      <polyline points="98,126 97,86 96,59 95,35" />
-      <polyline points="122,131 126,94 129,69 131,48" />
-      <polyline points="143,143 152,116 158,97 163,79" />
-    </g>
-    <g class="hand__joints">
-      <circle cx="100" cy="222" r="4.5" /><circle cx="70" cy="201" r="3.5" /><circle cx="48" cy="176" r="3.5" />
-      <circle cx="34" cy="151" r="3.5" /><circle cx="24" cy="129" r="3.5" /><circle cx="72" cy="131" r="3.5" />
-      <circle cx="64" cy="96" r="3.5" /><circle cx="60" cy="71" r="3.5" /><circle cx="57" cy="49" r="3.5" />
-      <circle cx="98" cy="126" r="3.5" /><circle cx="97" cy="86" r="3.5" /><circle cx="96" cy="59" r="3.5" />
-      <circle cx="95" cy="35" r="3.5" /><circle cx="122" cy="131" r="3.5" /><circle cx="126" cy="94" r="3.5" />
-      <circle cx="129" cy="69" r="3.5" /><circle cx="131" cy="48" r="3.5" /><circle cx="143" cy="143" r="3.5" />
-      <circle cx="152" cy="116" r="3.5" /><circle cx="158" cy="97" r="3.5" /><circle cx="163" cy="79" r="3.5" />
-    </g>
-  </svg>
+  <figure class="issue__hand" data-reveal style="--i:3" aria-label="Illustration of a hand with the 21 MediaPipe landmarks">
+    <div class="issue__hand-art">
+      <img src="assets/stickers/open-hand.png" alt="" />
+      <!-- Illustrative landmarks mapped to this artwork, not a measured model result. -->
+      <svg class="hand" viewBox="0 0 1280 1280" aria-hidden="true">
+        <g class="hand__bones">
+          <polyline points="650,936 534,794 441,677 340,574 259,483" />
+          <polyline points="650,936 551,561 514,413 491,309 452,191" />
+          <polyline points="551,561 650,550 747,588 831,648 650,936" />
+          <polyline points="650,550 668,367 681,258 681,137" />
+          <polyline points="747,588 799,440 833,332 841,229" />
+          <polyline points="831,648 924,548 961,467 999,381" />
+        </g>
+        <g class="hand__joints">
+          <circle cx="650" cy="936" r="16" data-landmark="0" />
+          <circle cx="534" cy="794" r="12" data-landmark="1" />
+          <circle cx="441" cy="677" r="12" data-landmark="2" />
+          <circle cx="340" cy="574" r="12" data-landmark="3" />
+          <circle cx="259" cy="483" r="12" data-landmark="4" />
+          <circle cx="551" cy="561" r="12" data-landmark="5" />
+          <circle cx="514" cy="413" r="12" data-landmark="6" />
+          <circle cx="491" cy="309" r="12" data-landmark="7" />
+          <circle cx="452" cy="191" r="12" data-landmark="8" />
+          <circle cx="650" cy="550" r="12" data-landmark="9" />
+          <circle cx="668" cy="367" r="12" data-landmark="10" />
+          <circle cx="681" cy="258" r="12" data-landmark="11" />
+          <circle cx="681" cy="137" r="12" data-landmark="12" />
+          <circle cx="747" cy="588" r="12" data-landmark="13" />
+          <circle cx="799" cy="440" r="12" data-landmark="14" />
+          <circle cx="833" cy="332" r="12" data-landmark="15" />
+          <circle cx="841" cy="229" r="12" data-landmark="16" />
+          <circle cx="831" cy="648" r="12" data-landmark="17" />
+          <circle cx="924" cy="548" r="12" data-landmark="18" />
+          <circle cx="961" cy="467" r="12" data-landmark="19" />
+          <circle cx="999" cy="381" r="12" data-landmark="20" />
+        </g>
+      </svg>
+    </div>
+    <figcaption class="caption">21 MediaPipe landmarks <span>Illustrative overlay</span></figcaption>
+  </figure>
 </section>

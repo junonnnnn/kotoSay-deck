@@ -84,8 +84,8 @@ Tokyo Global Innovative Challenge/
 
 Writing conventions used in the slides:
 
-- **Bold keywords:** wrap them in `<strong>`. In titles the sentence is grey and the
-  `<strong>` words turn white, so the key phrase stands out.
+- **Bold keywords:** wrap them in `<strong>` sparingly in body text. Headlines
+  stay white so they read as complete thoughts.
 - **Entrance animation:** add `data-reveal` to an element. `style="--i:2"` staggers it
   (higher means later).
 - **Images:** put them in `src/assets/` and reference them as `src="assets/…"`.
@@ -109,3 +109,9 @@ Uses Apple's interface principles (WWDC *Designing Fluid Interfaces*):
   contrast.
 - Two colours carry meaning throughout: **vermilion `#f25c3b`** is sign → voice (and
   the brand), and **teal `#1aa898`** is text → sign (the avatar's reply).
+
+## chee visual refresh
+
+The 13-slide refresh keeps kotoSay’s black, vermilion and teal identity. It adds brighter source images and team portraits, shorter headlines, visible validation metrics, an estimate with explicit market assumptions, a simpler roadmap, and a primary pilot-partner ask. The opening pairs a soft 3D hand with an editable 21-point MediaPipe overlay. Navigation, reduced motion, the real demo video and self-contained offline export are preserved.
+
+Three soft 3D stickers illustrate everyday access and two-way communication. Their saved files and complete generation prompts are in [src/assets/stickers/README.md](src/assets/stickers/README.md). They are decorative illustrations and do not replace product or community evidence. No external fonts or runtime dependencies were added.
