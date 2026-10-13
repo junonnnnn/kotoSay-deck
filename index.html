@@ -376,17 +376,18 @@ body.is-idle { cursor: none; }
 .hand__joints circle { fill: var(--sign); stroke: #fff5e8; stroke-width: 4; }
 
 /* ---------- 01 · Social issue ---------- */
-.issue { flex-direction: row; align-items: center; justify-content: space-between; gap: 4cqw; }
-.issue__text { max-width: 55cqw; }
+.issue { flex-direction: row; align-items: center; justify-content: space-between; gap: 3cqw; }
+.issue__text { flex: 1; min-width: 0; max-width: 57.5cqw; }
+.issue .statement { font-size: 3.75cqw; color: #a1a1a6; }
 .issue__sub {
   margin-top: 2.5cqw;
   font-family: var(--font-display);
-  font-size: 1.8cqw; line-height: 1.4; letter-spacing: -0.01em; font-weight: 400;
-  color: var(--ink-2); text-wrap: balance;
+  font-size: 2.1cqw; line-height: 1.25; letter-spacing: -0.018em; font-weight: 600;
+  color: #a1a1a6; text-wrap: balance;
 }
 .issue__sub i { font-style: italic; }
 .issue__sub [lang="ja"] { font-weight: 500; }
-.issue__hand { flex: none; width: 31cqw; margin-right: 0; transform-origin: 50% 90%; }
+.issue__hand { flex: none; width: 27cqw; margin-right: 0; transform-origin: 50% 90%; }
 .issue__hand-art { position: relative; width: 100%; aspect-ratio: 1; }
 .issue__hand-art img, .issue__hand-art svg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .issue__hand[data-reveal] { transform: rotate(-4deg) translate3d(0, 1.1cqw, 0); }
@@ -795,6 +796,12 @@ body.is-idle { cursor: none; }
 .market-assumptions strong { font-size: 2.4cqw; }
 .market-assumptions span { font-size: 1.4cqw; color: var(--ink-2); }
 .market-note { margin-top: 2cqw; max-width: 83cqw; }
+.needs { flex: none; margin-top: 1.5cqw; }
+.needs__intro { margin-bottom: 1cqw; }
+.needs__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5cqw; }
+.need { display: flex; align-items: center; gap: 1.2cqw; padding: 1.5cqw 1.8cqw; border-radius: var(--r-lg); background: var(--surface-1); border: 1px solid var(--hairline); }
+.need .headline { font-size: 1.8cqw; color: var(--ink-2); }
+.need__num { flex: none; display: grid; place-items: center; width: 2.6cqw; height: 2.6cqw; border-radius: 50%; background: var(--surface-3); font-size: 1.2cqw; font-weight: 700; color: var(--ink-1); }
 </style>
 </head>
 <body>
@@ -805,9 +812,13 @@ body.is-idle { cursor: none; }
 <section class="slide issue" data-label="The issue">
   <div class="issue__text">
     <span class="eyebrow" data-reveal>The social issue</span>
-    <h1 class="statement" data-reveal style="--i:1">Access starts with<br />a shared language</h1>
-    <p class="issue__sub" data-reveal style="--i:2">For many Deaf people, sign language is their first language. Yet it has long been denied and dismissed.</p>
-    <p class="caption" data-reveal style="--i:3">Historically mocked as <i>te-mane</i> <span lang="ja">手真似</span>, “monkey imitation.”</p>
+    <h1 class="statement" data-reveal style="--i:1">
+      Sign language is a Deaf person’s <strong>first and only native language.</strong>
+    </h1>
+    <p class="issue__sub" data-reveal style="--i:3">
+      Yet it has long been <strong>denied</strong> — even mocked as
+      <strong><i>te-mane</i></strong> <span lang="ja">手真似</span>, “monkey imitation.”
+    </p>
   </div>
   <figure class="issue__hand" data-reveal style="--i:3" aria-label="Illustration of a hand with the 21 MediaPipe landmarks">
     <div class="issue__hand-art">
@@ -1024,7 +1035,7 @@ body.is-idle { cursor: none; }
     </div>
   </div>
   <div class="impact-foot" data-reveal style="--i:5">
-    <p class="caption">Designed to address concerns raised by the World Federation of the Deaf (WFD) and World Association of Sign Language Interpreters (WASLI).</p>
+    <p class="lede">Designed to address concerns raised by the World Federation of the Deaf (<strong>WFD</strong>) and World Association of Sign Language Interpreters (<strong>WASLI</strong>).</p>
   </div>
 </section>
 
@@ -1124,6 +1135,14 @@ body.is-idle { cursor: none; }
       <li><strong>~40 million</strong><span>Deaf signers in Asia</span></li>
       <li><strong>¥190 per month</strong><span>Assumed subscription per user</span></li>
       <li><strong>12 months</strong><span>Annual subscription period</span></li>
+    </ol>
+  </div>
+  <div class="needs">
+    <p class="needs__intro lede" data-reveal style="--i:4">Deaf people need <strong>three things</strong> from an interpreter:</p>
+    <ol class="needs__list">
+      <li class="need" data-reveal style="--i:4"><span class="need__num">1</span><span class="headline">Their own <strong>sign language</strong></span></li>
+      <li class="need" data-reveal style="--i:5"><span class="need__num">2</span><span class="headline">Available <strong>anytime</strong></span></li>
+      <li class="need" data-reveal style="--i:6"><span class="need__num">3</span><span class="headline">Answered <strong>in sign</strong></span></li>
     </ol>
   </div>
   <p class="caption market-note" data-reveal style="--i:4">~40M × ¥190 × 12 ≈ ¥90B. Illustrative estimate at full adoption, before geographic reach, conversion and affordability constraints. This is an opportunity estimate, not a revenue forecast.</p>
