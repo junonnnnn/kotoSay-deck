@@ -374,7 +374,7 @@
     const phone = video.closest(".phone") || video.parentElement;
     const soundBtn = phone.querySelector(".sound");
     const playBtn = phone.querySelector(".phone__play");
-    const m = { video, wantSound: true };
+    const m = { video, wantSound: !video.muted };
 
     const showSound = () => {
       if (soundBtn) soundBtn.setAttribute("aria-pressed", video.muted ? "false" : "true");

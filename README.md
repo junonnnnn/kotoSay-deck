@@ -22,10 +22,14 @@ The floating control bar hides after a few seconds. Move the mouse to bring it b
 **Demo video (slide 3):** it starts from the beginning every time you reach the slide and
 pauses when you leave. The first play has sound, so you hear kotoSay speak the translation
 at about 17 seconds. After that it loops on mute so it doesn't keep talking over you.
-Use the speaker button beside the phone to turn sound on or off, and click the video to
+Use the speaker button below the phone to turn sound on or off, and click the video to
 pause it. Browsers only allow sound after you've pressed a key or clicked on the page. If
 you open the deck straight onto slide 3, it plays muted until you press the speaker
 button.
+
+The avatar recording plays in a second phone on the right of slide 3. It stays
+muted and pauses when you leave the slide. Click either recording to pause or
+resume it. With reduced motion enabled, use each phone’s play button.
 
 ## Saving as a PDF
 

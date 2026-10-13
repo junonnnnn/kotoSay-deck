@@ -122,9 +122,13 @@
 .hero .chips { margin-top: 2.25cqw; }
 
 .hero__visual {
-  position: relative; flex: 0 0 34cqw; height: 100%;
-  display: grid; place-items: center;
+  position: relative; flex: 0 0 42.5cqw;
+  display: flex; align-items: center; gap: 3.5cqw;
 }
+.hero__visual .phone { flex: none; }
+.hero__visual .sound { left: auto; right: 0; bottom: -3.7cqw; }
+.phone__label { position: absolute; left: 0; bottom: -3cqw; color: var(--sign); font-size: 1.2cqw; font-weight: 600; }
+.phone--avatar .phone__label { color: var(--reply); }
 .hero__example { margin-top: 1.5cqw; padding-left: 1.2cqw; border-left: 3px solid var(--sign); }
 .hero__example p { font-size: 1.6cqw; margin-top: 0.35cqw; color: var(--ink-1); }
 .phone {
