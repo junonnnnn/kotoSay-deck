@@ -23,8 +23,8 @@
   <div class="hero__visual" data-reveal style="--i:3">
     <div class="phone">
       <div class="phone__screen">
-        <!-- Real recording: JSL in, "I have a stomach ache right now" out (voice at ~17s) -->
-        <video class="phone__video" data-autoplay playsinline preload="auto"
+        <!-- Real recording: JSL in, "I have a stomach ache right now" out -->
+        <video class="phone__video" data-autoplay playsinline muted preload="auto"
                src="assets/video/kotosay-demo.mp4"
                poster="assets/video/kotosay-demo-poster.jpg"
                aria-label="kotoSay demo: a signer uses Japanese Sign Language and the app says “I have a stomach ache right now.”"></video>
@@ -32,10 +32,6 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" /></svg>
         </button>
       </div>
-      <button class="sound" type="button" aria-label="Sound" aria-pressed="true">
-        <svg class="sound__on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.8 7.8 0 0 1 0 11" /></svg>
-        <svg class="sound__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" /><path d="m16 9.5 5 5M21 9.5l-5 5" /></svg>
-      </button>
       <p class="phone__label">Sign → voice</p>
     </div>
     <div class="phone phone--avatar">

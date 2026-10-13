@@ -158,7 +158,7 @@ body.is-idle { cursor: none; }
 }
 @media (prefers-reduced-transparency: reduce) {
   .chrome { background: #1c1c1e; -webkit-backdrop-filter: none; backdrop-filter: none; }
-  .phone__play, .sound { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: #2c2c2e !important; }
+  .phone__play { -webkit-backdrop-filter: none !important; backdrop-filter: none !important; background: #2c2c2e !important; }
 }
 @media (prefers-contrast: more) {
   .chrome { background: #1c1c1e; border-color: var(--ink-3); }
@@ -179,6 +179,6 @@ body.is-idle { cursor: none; }
   .slide:last-child { break-after: auto; page-break-after: auto; }
   [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
   .chrome { display: none; }
-  .phone__play, .sound { display: none !important; }   /* the PDF shows the video's poster frame */
+  .phone__play { display: none !important; }   /* the PDF shows the video's poster frame */
   .hero__glow { display: none !important; }            /* large radial gradients band in PDF output */
 }

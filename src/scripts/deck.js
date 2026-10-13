@@ -366,52 +366,31 @@
 
   /* ---------- Demo video ----------
      Plays from the start when its slide arrives, pauses when you leave.
-     The first pass plays with sound (if the browser allows it; otherwise it
-     falls back to muted). Later loops are muted so the voice doesn't repeat
-     while you talk. The sound button overrides; tapping the video pauses it.
+     Always muted, so it never talks over you, and it loops.
+     Tapping the video pauses it.
      Reduced motion: nothing autoplays; press play. */
   const media = slides.map((s) => Array.from(s.querySelectorAll("video[data-autoplay]")).map((video) => {
     const phone = video.closest(".phone") || video.parentElement;
-    const soundBtn = phone.querySelector(".sound");
     const playBtn = phone.querySelector(".phone__play");
-    const m = { video, wantSound: !video.muted };
+    const m = { video };
+    video.muted = true;
 
-    const showSound = () => {
-      if (soundBtn) soundBtn.setAttribute("aria-pressed", video.muted ? "false" : "true");
-    };
     m.play = (fromStart) => {
       if (fromStart) {
         try { video.currentTime = 0; } catch (_) { /* not seekable yet */ }
-        video.muted = !m.wantSound;
       }
-      showSound();
       const p = video.play();
-      if (p && p.catch) {
-        p.catch(() => {                       // autoplay with sound blocked → play muted
-          video.muted = true;
-          showSound();
-          video.play().catch(() => phone.classList.add("is-paused"));
-        });
-      }
+      if (p && p.catch) p.catch(() => phone.classList.add("is-paused"));
     };
 
     video.addEventListener("play", () => phone.classList.remove("is-paused"));
     video.addEventListener("pause", () => { if (!video.ended) phone.classList.add("is-paused"); });
-    video.addEventListener("ended", () => {   // loop quietly after the first pass
-      video.muted = true;
-      showSound();
+    video.addEventListener("ended", () => {
       video.currentTime = 0;
       video.play().catch(() => phone.classList.add("is-paused"));
     });
     video.addEventListener("click", () => { if (video.paused) m.play(false); else video.pause(); });
     if (playBtn) playBtn.addEventListener("click", () => m.play(false));
-    if (soundBtn) {
-      soundBtn.addEventListener("click", () => {
-        video.muted = !video.muted;
-        m.wantSound = !video.muted;
-        showSound();
-      });
-    }
     phone.classList.add("is-paused");
     return m;
   }));
