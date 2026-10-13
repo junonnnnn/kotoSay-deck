@@ -54,8 +54,6 @@
 .issue__hand { flex: none; width: 31cqw; margin-right: 0; transform-origin: 50% 90%; }
 .issue__hand-art { position: relative; width: 100%; aspect-ratio: 1; }
 .issue__hand-art img, .issue__hand-art svg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
-.issue__hand figcaption { margin-top: 0.6cqw; text-align: center; color: var(--ink-2); }
-.issue__hand figcaption span { display: block; color: var(--ink-3); font-size: 0.85em; margin-top: 0.25cqw; }
 .issue__hand[data-reveal] { transform: rotate(-4deg) translate3d(0, 1.1cqw, 0); }
 .slide.is-visible .issue__hand[data-reveal] { transform: rotate(-4deg); }
 
