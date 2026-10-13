@@ -19,23 +19,17 @@ email it, put it on a USB stick or upload it anywhere.
 
 The floating control bar hides after a few seconds. Move the mouse to bring it back.
 
-**Demo video (slide 3):** it starts from the beginning every time you reach the slide and
-pauses when you leave. The first play has sound, so you hear kotoSay speak the translation
-at about 17 seconds. After that it loops on mute so it doesn't keep talking over you.
-Use the speaker button below the phone to turn sound on or off, and click the video to
-pause it. Browsers only allow sound after you've pressed a key or clicked on the page. If
-you open the deck straight onto slide 3, it plays muted until you press the speaker
-button.
-
-The avatar recording plays in a second phone on the right of slide 3. It stays
-muted and pauses when you leave the slide. Click either recording to pause or
-resume it. With reduced motion enabled, use each phone’s play button.
+**Demo videos (slides 3 and 14):** slide 14 is a copy of slide 3, so the deck ends on
+kotoSay. Each slide has two phones: the sign → voice recording and the avatar recording.
+Both are always muted. They start from the beginning every time you reach the slide,
+loop while you stay, and pause when you leave. Click a recording to pause or resume it.
+With reduced motion enabled, use each phone's play button.
 
 ## Saving as a PDF
 
 Open `index.html` in Chrome or Edge, press `Ctrl+P` and choose **Save as PDF**.
 Set **Margins: None** and turn on **Background graphics**. You get one slide per
-page, 13 pages in 16:9.
+page, 14 pages in 16:9.
 
 ## Folder structure
 
@@ -59,11 +53,12 @@ Tokyo Global Innovative Challenge/
 │   │   ├── 10-business-model.html
 │   │   ├── 11-growth.html
 │   │   ├── 12-team.html
-│   │   └── 13-closing.html
+│   │   ├── 13-closing.html
+│   │   └── 14-hero-reprise.html   ← copy of slide 3
 │   ├── assets/
 │   │   ├── sources/    ← source screenshots shown on slide 2 (inlined at build)
 │   │   ├── team/       ← team photos shown on slide 12 (inlined at build)
-│   │   └── video/      ← demo recording + poster frame for slide 3 (inlined at build)
+│   │   └── video/      ← demo recordings + poster frames for slides 3 and 14 (inlined at build)
 │   ├── styles/
 │   │   ├── tokens.css  ← colours, fonts, radii
 │   │   ├── base.css    ← type scale, bold-keyword style
